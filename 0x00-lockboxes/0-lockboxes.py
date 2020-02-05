@@ -2,7 +2,8 @@
 """Algo checking wheter or not lockboxes can be opened"""
 
 def canUnlockAll(boxes):
-    """ Creates a set for non duplicates and list for found keys"""
+    """ Creates a set for non duplicates and list for
+    found keys"""
 
     k_opened = set()
     k_found = [0]
