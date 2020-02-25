@@ -18,6 +18,7 @@ def sum_primes(n):
     if n >= 2:
         result = result + n
     return result
+    
 
 def minOperations(n):
     if type(n) != int:
