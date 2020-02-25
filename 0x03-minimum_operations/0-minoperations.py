@@ -1,8 +1,9 @@
 #!/usr/bin/python3
 import math
 """"
-Your text editor can execute only two operations in this file: Copy All and Paste. Given a
-number n, write a method that calculates the fewest number of operations.
+Your text editor can execute only two operations in this file:
+Copy All and Paste.Given a number n, write a method that calculates
+the fewest number of operations.
 """
 
 
@@ -18,9 +19,9 @@ def sum_primes(n):
     if n >= 2:
         result = result + n
     return result
-    
 
-def minOperations(n):
-    if type(n) != int:
-        return 0
+    def minOperations(n):
+        if type(n) != int:
+            return 0
     return sum_primes(n)
+    
