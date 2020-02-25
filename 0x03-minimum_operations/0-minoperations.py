@@ -13,7 +13,7 @@ def sum_primes(n):
         return result
     for idx in range(2, int(math.sqrt(n) + 1)):
         while n % idx == 0:
-            n = n / idx
+            n = n // idx
             result = result + idx
     if n >= 2:
         result = result + n
