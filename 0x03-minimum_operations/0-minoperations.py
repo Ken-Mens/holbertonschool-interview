@@ -20,6 +20,7 @@ def sum_primes(n):
         result = result + n
     return result
 
+
 def minOperations(n):
     if type(n) != int:
         return 0
