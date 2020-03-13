@@ -1,7 +1,7 @@
 #include "sandpiles.h"
 
 /**
- * sum - sums two sandpiles
+ * sand_sum - sums two sandpiles
  * @grid1: sandpile, 3x3 matrix
  * @grid2: second sandpile, which will be 0 at then end
  */
