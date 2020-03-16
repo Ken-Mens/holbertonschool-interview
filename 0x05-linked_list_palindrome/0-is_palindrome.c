@@ -36,6 +36,7 @@ int is_palindrome(listint_t **head)
 int traverse(listint_t **left, listint_t *right)
 {
 	int result = 1;
+	int tempo = -1;
 
 	if (right == NULL)
 		return (1);
@@ -43,8 +44,9 @@ int traverse(listint_t **left, listint_t *right)
 	if (result == 0)
 		return (0);
 	if ((*left)->n == right->n)
-		return (2);
-	*left = (*left)->next;
-	return (1);
-
+			tempo = 1;
+		else
+			tempo = 0;
+		*left = (*left)->next;
+		return (tempo);
 }
