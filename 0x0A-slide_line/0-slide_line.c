@@ -15,7 +15,7 @@ int slide_left(int *line, size_t size)
 	int temp = 0;
 	int success = 1;
 
-	for (s_right = 0; s_right < size; s_right++)
+	for (; s_right < size; s_right++)
 	{
 		if (line[s_right] == 0)
 			continue;
@@ -40,7 +40,7 @@ int slide_left(int *line, size_t size)
 		line[s_left] = temp;
 		s_left++;
 	}
-	for (s_left = 0; s_left < s_right; s_left++)
+	for (; s_left < s_right; s_left++)
 		line[s_left] = 0;
 	return (success);
 }
