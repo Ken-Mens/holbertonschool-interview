@@ -10,8 +10,8 @@
 
 int slide_left(int *line, size_t size)
 {
-	size_t s_right, s_left;
-	s_right = s_left = 0;
+	size_t s_right = 0;
+	size_t s_left = 0;
 	int placehold = 0;
 	int success = 1;
 
@@ -54,8 +54,8 @@ int slide_left(int *line, size_t size)
 
 int slide_right(int *line, size_t size)
 {
-	size_t s_right, s_left;
-	s_right = s_left = size;
+	size_t s_right = size;
+	size_t s_left = size;
 	int placehold = 0;
 	int success = 1;
 
