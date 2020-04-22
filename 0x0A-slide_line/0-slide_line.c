@@ -12,32 +12,32 @@ int slide_left(int *line, size_t size)
 {
 	size_t s_right, s_left;
 	s_right = s_left = 0;
-	int temp = 0;
+	int placehold = 0;
 	int success = 1;
 
 	for (; s_right < size; s_right++)
 	{
 		if (line[s_right] == 0)
 			continue;
-		if (temp == 0)
-			temp = line[s_right];
-		else if (temp == line[s_right])
+		if (placehold == 0)
+			placehold = line[s_right];
+		else if (placehold == line[s_right])
 		{
-			temp = line[s_right];
-			line[s_left] = temp + line[s_right];
-			temp = 0;
+			placehold = line[s_right];
+			line[s_left] = placehold + line[s_right];
+			placehold = 0;
 			s_left++;
 		}
 		else
 		{
-			line[s_left] = temp;
-			temp = line[s_right];
+			line[s_left] = placehold;
+			placehold = line[s_right];
 			s_left++;
 		}
 	}
-	if (temp)
+	if (placehold)
 	{
-		line[s_left] = temp;
+		line[s_left] = placehold;
 		s_left++;
 	}
 	for (; s_left < s_right; s_left++)
@@ -56,32 +56,32 @@ int slide_right(int *line, size_t size)
 {
 	size_t s_right, s_left;
 	s_right = s_left = size;
-	int temp = 0;
+	int placehold = 0;
 	int success = 1;
 
 	for (s_left = size; s_left > 0; s_left--)
 	{
 		if (line[s_left - 1] == 0)
 			continue;
-		if (temp == 0)
-			temp = line[s_left - 1];
-		else if (temp == line[s_left - 1])
+		if (placehold == 0)
+			placehold = line[s_left - 1];
+		else if (placehold == line[s_left - 1])
 		{
-			temp = line[s_left - 1];
-			line[s_right - 1] = temp + line[s_left - 1];
-			temp = 0;
+			placehold = line[s_left - 1];
+			line[s_right - 1] = placehold + line[s_left - 1];
+			placehold = 0;
 			s_right--;
 		}
 		else
 		{
-			line[s_right - 1] = temp;
-			temp = line[s_left - 1];
+			line[s_right - 1] = placehold;
+			placehold = line[s_left - 1];
 			s_right--;
 		}
 	}
-	if (temp)
+	if (placehold)
 	{
-		line[s_right - 1] = temp;
+		line[s_right - 1] = placehold;
 		s_right--;
 	}
 	for (; s_left < s_right; s_right--)
