@@ -22,5 +22,13 @@ avl_t *sorted_array_to_avl(int *array, size_t size)
     mid = (size - 1) / 2;
     node->n = array[mid];
     node->parent = NULL;
+    if (mid > 0)
+        node = sorted_array_to_avl(array, mid);
+    else
+        node->left = NULL;
+    if (size > (mid + 1))
+        node = sorted_array_to_avl(&array[mid + 1], size - (mid + 1));
+    else    
+        node->right = NULL;
     return (node);
 }
