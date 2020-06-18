@@ -21,7 +21,7 @@ void heapify(int *array, size_t n, int index, size_t size)
 
 	if (large != index)
 	{
-		swap(&array[index], &array[large]);
+		swapped(&array[index], &array[large]);
 		if (array[index] != array[large])
 			print_array(array, size);
 		heapify(array, n, large, size);
@@ -60,7 +60,7 @@ void heap_sort(int *array, size_t size)
 	idx = size - 1;
 	for ( ; idx > 0; idx--)
 	{
-		swap(&array[0], &array[idx]);
+		swapped(&array[0], &array[idx]);
 		print_array(array, size);
 		heapify(array, idx, 0, size);
 	}
