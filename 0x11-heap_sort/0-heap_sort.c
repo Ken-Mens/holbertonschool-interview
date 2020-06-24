@@ -2,7 +2,7 @@
 
 /**
  * heapify - heapifies
- * @array: pointer to  sorted array 
+ * @array: pointer to  sorted array
  * @n: size
  * @index: index to search through array
  * @size: size of heap sort
@@ -29,9 +29,9 @@ void heapify(int *array, size_t n, int index, size_t size)
 }
 
 /**
- * swap - swaps positions of values
- * @x: first value
- * @y: second value
+ * swapped - swaps positions of values
+ * @beta: first value
+ * @zeta: second value
  */
 void swapped(int *beta, int *zeta)
 {
