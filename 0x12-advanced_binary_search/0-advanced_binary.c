@@ -1,7 +1,7 @@
 #include "search_algos.h"
 
 /**
- * print_array - prints an array
+ * print_away - prints an array
  * @array: array to print
  * @l: left bound
  * @r: right bound
