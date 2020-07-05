@@ -21,4 +21,4 @@ def recurse(subreddit, hot_list=[], after=""):
             hot_list.append(titles)
         after = response.json().get("data").get("after")
         return recurse(subreddit, hot_list, after)
-        
+ 
