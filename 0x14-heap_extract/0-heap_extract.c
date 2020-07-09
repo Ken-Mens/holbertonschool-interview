@@ -73,7 +73,7 @@ void heapify(heap_t *heap)
  */
 int heap_extract(heap_t **root)
 {
-	heap_t *last;
+	heap_t *last = NULL;
 	int data;
 
 	if (!root)
