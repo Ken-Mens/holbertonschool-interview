@@ -8,8 +8,8 @@
  */
 size_t tree_size(heap_t *tree)
 {
-	int left_side = 0;
-	int right_size = 0;
+	size_t left_side = 0;
+	size_t right_size = 0;
 
 	if (tree == NULL)
 		return (0);
