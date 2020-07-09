@@ -67,42 +67,6 @@ void heapify(heap_t *heap)
 }
 
 /**
- * n_node - find n-th node
- * @node: pointer to root node
- * @n: n-th node to find
- * Return: pointer to node
- */
-heap_t *nth_node(heap_t *node, int data)
-{
-	int idx;
-	int mask;
-
-	if (!node)
-		return (NULL);
-	for (idx = 0; 1 << (idx + 1) <=  data; ++idx)
-		continue;
-	for (--idx; idx >= 0; --idx)
-	{
-		mask = 1 << idx;
-		if (data & mask)
-		{
-			if (node->right)
-				node = node->right;
-			else
-				break;
-		}
-		else
-		{
-			if (node->left)
-				node = node->left;
-			else
-				break;
-		}
-	}
-	return (node);
-}
-
-/**
  * heap_extract - extracts root node from heap
  * @root: root of the heap
  * Return: value from extracted node, 0 if failed
@@ -114,7 +78,6 @@ int heap_extract(heap_t **root)
 
 	if (!root)
 		return (0);
-	last_dance = get_nth_node(*root, get_size(*root));
 	data = (*root)->n;
 	(*root)->n = last_dance->n;
 	if (last_dance->parent)
