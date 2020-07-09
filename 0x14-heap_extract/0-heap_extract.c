@@ -67,31 +67,68 @@ void heapify(heap_t *heap)
 }
 
 /**
+ * n_node - find n-th node
+ * @node: pointer to root node
+ * @n: n-th node to find
+ * Return: pointer to node
+ */
+heap_t *nth_node(heap_t *node, int data)
+{
+	int idx;
+	int mask;
+
+	if (!node)
+		return (NULL);
+	for (idx = 0; 1 << (idx + 1) <=  n; ++idx)
+		continue;
+	for (--idx; idx >= 0; --idx)
+	{
+		mask = 1 << idx;
+		if (n & mask)
+		{
+			if (node->right)
+				node = node->right;
+			else
+				break;
+		}
+		else
+		{
+			if (node->left)
+				node = node->left;
+			else
+				break;
+		}
+	}
+	return (node);
+}
+
+/**
  * heap_extract - extracts root node from heap
  * @root: root of the heap
  * Return: value from extracted node, 0 if failed
  */
 int heap_extract(heap_t **root)
 {
-	heap_t *last = NULL;
+	heap_t *last_dance = NULL;
 	int data;
 
 	if (!root)
 		return (0);
+	last_dance = get_nth_node(*root, get_size(*root));
 	data = (*root)->n;
-	(*root)->n = last->n;
-	if (last->parent)
+	(*root)->n = last_dance->n;
+	if (last_dance->parent)
 	{
-		if (last->parent->left == last)
-			last->parent->left = NULL;
+		if (last_dance->parent->left == last_dance)
+			last_dance->parent->left = NULL;
 		else
-			last->parent->right = NULL;
+			last_dance->parent->right = NULL;
 	}
 	else
 	{
 		*root = NULL;
 	}
-	free(last);
+	free(last_dance);
 	heapify(*root);
 	return (data);
 }
