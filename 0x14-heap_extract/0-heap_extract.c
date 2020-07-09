@@ -79,12 +79,12 @@ heap_t *nth_node(heap_t *node, int data)
 
 	if (!node)
 		return (NULL);
-	for (idx = 0; 1 << (idx + 1) <=  n; ++idx)
+	for (idx = 0; 1 << (idx + 1) <=  data; ++idx)
 		continue;
 	for (--idx; idx >= 0; --idx)
 	{
 		mask = 1 << idx;
-		if (n & mask)
+		if (data & mask)
 		{
 			if (node->right)
 				node = node->right;
