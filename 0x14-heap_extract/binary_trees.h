@@ -26,5 +26,6 @@ void binary_tree_print(const binary_tree_t *tree);
 int heap_extract(heap_t **root);
 void heapify(heap_t *heap);
 void swap(binary_tree_t *node1, binary_tree_t *node2);
+binary_tree_t *get_nth(binary_tree_t *node, size_t n);
 size_t tree_size(heap_t *tree);
 #endif /* BINARY_TREES_H */

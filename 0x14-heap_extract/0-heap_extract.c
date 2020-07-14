@@ -39,7 +39,42 @@ void swap(binary_tree_t *node1, binary_tree_t *node2)
 }
 
 /**
- * sift_down - fully heapifies nodes
+ * get_nth - get the nth node
+ * @node: heap node
+ * @n: idx of node
+ * Return: parent if n is greater than size
+ */
+binary_tree_t *get_nth(binary_tree_t *node, size_t n)
+{
+	int idx = 0, foo;
+
+	if (!node)
+		return (NULL);
+	for (; 1 << (idx + 1) <= (int)n; ++idx)
+		;
+	for (--idx; idx >= 0; --idx)
+	{
+		foo = 1 << idx;
+		if (n & foo)
+		{
+			if (node->right)
+				node = node->right;
+			else
+				break;
+		}
+		else
+		{
+			if (node->left)
+				node = node->left;
+			else
+				break;
+		}
+	}
+	return (node);
+}
+
+/**
+ * heapify - fully heapifies nodes
  * @heap: heap
  */
 void heapify(heap_t *heap)
@@ -73,12 +108,13 @@ void heapify(heap_t *heap)
  */
 int heap_extract(heap_t **root)
 {
-	heap_t *last_dance = NULL;
-	int data;
+	heap_t *last_dance;
+	int info;
 
 	if (!root)
 		return (0);
-	data = (*root)->n;
+	last_dance = get_nth(*root, tree_size(*root));
+	info = (*root)->n;
 	(*root)->n = last_dance->n;
 	if (last_dance->parent)
 	{
@@ -93,5 +129,5 @@ int heap_extract(heap_t **root)
 	}
 	free(last_dance);
 	heapify(*root);
-	return (data);
+	return (info);
 }
