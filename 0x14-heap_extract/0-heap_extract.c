@@ -26,8 +26,8 @@ size_t tree_size(heap_t *tree)
 
 /**
  * swap - swap two nodes of binary tree
- * @node1: first node
- * @node2: second node
+ * @node1: first 
+ * @node2: second
 */
 void swap(binary_tree_t *node1, binary_tree_t *node2)
 {
@@ -39,20 +39,20 @@ void swap(binary_tree_t *node1, binary_tree_t *node2)
 }
 
 /**
- * get_nth - get the nth node
+ * get_nth - get nth node
  * @node: heap node
  * @n: idx of node
  * Return: parent if n is greater than size
  */
 binary_tree_t *get_nth(binary_tree_t *node, size_t n)
 {
-	int idx = 0, foo;
+	int idx, foo;
 
-	if (!node)
-		return (NULL);
+	idx = 0;
 	for (; 1 << (idx + 1) <= (int)n; ++idx)
 		;
-	for (--idx; idx >= 0; --idx)
+	--idx;
+	for (; idx >= 0; --idx)
 	{
 		foo = 1 << idx;
 		if (n & foo)
