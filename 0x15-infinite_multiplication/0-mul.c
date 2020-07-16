@@ -8,11 +8,10 @@
  * @size: size
  * Return: pointer
  */
-
 void *mem_set(void *q, int c, int size)
 {
 	int idx;
-	 unsigned char *p = q;
+	char *p = q;
 
     idx = 0;
 	for (; idx < size ; idx++)
@@ -29,7 +28,6 @@ void *mem_set(void *q, int c, int size)
  * @size: size parameter.
  * Return: Always 0.
  */
-
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
 	unsigned int x = 0;
@@ -52,7 +50,6 @@ void *_calloc(unsigned int nmemb, unsigned int size)
  * @argv: second argument
  * Return: 0
  */
-
 int main(int argc, char **argv)
 {
 	int l1, l2, carry, foo, b, idx, y;
