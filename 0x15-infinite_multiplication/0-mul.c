@@ -62,7 +62,8 @@ int main(int argc, char **argv)
 		printf("Error\n");
 		exit(98);
 	}
-	l1 = strlen(argv[1]), l2 = strlen(argv[2]);
+	l1 = strlen(argv[1]);
+	l2 = strlen(argv[2]);
 	result = _calloc(l1 + l2, sizeof(*result));
 
     idx = l1 - 1;
