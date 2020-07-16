@@ -2,8 +2,8 @@
 #include <string.h>
 
 /**
- * memeset - helper function that mimics memset
- * @a: address
+ * mem_set - helper function that mimics memset
+ * @q: address
  * @c: set type
  * @size: size
  * Return: pointer
