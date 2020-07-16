@@ -12,7 +12,7 @@
 void *mem_set(void *q, int c, int size)
 {
 	int idx;
-	char *p = q;
+	 unsigned char *p = q;
 
     idx = 0;
 	for (; idx < size ; idx++)
