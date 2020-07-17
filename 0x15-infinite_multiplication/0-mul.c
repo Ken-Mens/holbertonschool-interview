@@ -13,7 +13,7 @@ void *mem_set(void *q, int c, int size)
 	int idx;
 	char *p = q;
 
-    idx = 0;
+	idx = 0;
 	for (; idx < size ; idx++)
 	{
 		*p = c;
@@ -54,7 +54,7 @@ int main(int argc, char **argv)
 {
 	int l1, l2, carry, foo, b, idx, y;
 	int *result;
-    if (argc != 3)
+	if (argc != 3)
 	{
 		printf("Error\n");
 		exit(98);
@@ -63,12 +63,12 @@ int main(int argc, char **argv)
 	l2 = strlen(argv[2]);
 	result = _calloc(l1 + l2, sizeof(*result));
 
-    idx = l1 - 1;
+	idx = l1 - 1;
 	for (; idx >= 0; idx--)
 	{
 		carry = 0;
 		foo = argv[1][idx] - '0';
-        y = l2 - 1;
+		y = l2 - 1;
 		for (; y >= 0; y--)
 		{
 			b = argv[2][y] - '0';
