@@ -1,0 +1,13 @@
+# 0x16. Rotate 2D Matrix
+
+
+## TASK
+
+0. Rotate 2D Matrix
+
+Given an n x n 2D matrix, rotate it 90 degrees.
+
+- Do not return anything. The matrix must be edited in-place.
+
+- You can assume the matrix will have 2 dimensions and will not be empty.
+
