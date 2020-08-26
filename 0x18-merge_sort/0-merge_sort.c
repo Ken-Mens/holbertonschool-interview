@@ -8,13 +8,13 @@
  */
 void merge_split(int *array, size_t size, int *tempo)
 {
-    int m = size /2;
+	int m = size / 2;
 
-    if (size < 2)
-        return;
-    merge_split(array, m, tempo);
-    merge_split(array + m,  size - m, tempo);
-    merger(array, size, m, tempo);
+	if (size < 2)
+		return;
+	merge_split(array, m, tempo);
+	merge_split(array + m,  size - m, tempo);
+	merger(array, size, m, tempo);
 }
 /**
  * merge_sort - Sorts array using merge sort algorithm
@@ -24,13 +24,13 @@ void merge_split(int *array, size_t size, int *tempo)
  */
 void merge_sort(int *array, size_t size)
 {
-    int *tempo = NULL;
+	int *tempo = NULL;
 
-    if (size < 2)
-        return;
-    tempo = malloc(sizeof(int) * size);
-    merge_split(array, size, tempo);
-    free(tempo);
+	if (size < 2)
+		return;
+	tempo = malloc(sizeof(int) * size);
+	merge_split(array, size, tempo);
+	free(tempo);
 }
 /**
  * merger - Merges subarrays
