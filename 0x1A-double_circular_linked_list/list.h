@@ -1,6 +1,9 @@
 #ifndef LIST_HEADER
 #define LIST_HEADER
 
+#include <stdlib.h>
+#include <string.h>
+
 /**
  * struct List - doubly linked list
  * @str: string - (malloc'ed string)
