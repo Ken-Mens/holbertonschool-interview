@@ -1,6 +1,6 @@
 # 0x1B. Radix Sort
 
-given the following print_array function:
+### given the following print_array function:
 
 ```
 #include <stdlib.h>
