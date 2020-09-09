@@ -11,9 +11,10 @@ List *add_node_end(List **list, char *str)
 {
 	List *foo, *tail;
 
+
+	foo = malloc(sizeof(List));
 	if (!list)
 		return (NULL);
-	foo = malloc(sizeof(List));
 	foo->str = strdup(str);
 	if (!(foo->str))
 	{
