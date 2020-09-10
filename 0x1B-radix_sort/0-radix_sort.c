@@ -66,8 +66,8 @@ void radix_sort(int *array, size_t size)
 {
 	size_t mx, n;
 
-//	if (!array)
-//		return;dddd
+	if (!array)
+		return;
 	mx = max_int(array, size);
 	n = 1;
 	for (; mx / n > 0; n *= 10)
