@@ -3,7 +3,7 @@
 /**
  * max_int - maximum integer in an unsorted int array
  * @array: array to be iterated
- * @sbulk: size of the array
+ * @bulk: size of the array
  * Return: max int in the array
  */
 
@@ -22,7 +22,7 @@ int max_int(int *array, int bulk)
 
 /**
  * count_sort - Counting sort for Radix sort algorhitm
- * @array: array 
+ * @array: array
  * @size: size of the array
  * @n: integer to sort through
  * Return: void
