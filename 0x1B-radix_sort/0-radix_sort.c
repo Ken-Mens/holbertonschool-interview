@@ -10,9 +10,8 @@
 int max_int(int *array, int bulk)
 {
 	int mx = array[0];
-	int foo;
+	int foo = 1;
 
-	foo = 1;
 	for (; foo < bulk; foo++)
 	{
 		if (array[foo] > mx)
@@ -22,28 +21,29 @@ int max_int(int *array, int bulk)
 }
 
 /**
- * count_sort - Counting sort for Radix sort
- * @array: array to sort
- * @size: size of array
- * @n: sig fig to sort by
+ * count_sort - Counting sort for Radix sort algorhitm
+ * @array: array 
+ * @size: size of the array
+ * @n: integer to sort through
  * Return: void
  */
 
 void count_sort(int *array, size_t size, int n)
 {
-	int *output = NULL;
+	int *product = NULL;
 	int count[10] = {0};
 	size_t idx = 0;
 
-	output = malloc(sizeof(int) * size);
+	product = malloc(sizeof(int) * size);
 	for (; idx < size; idx++)
 		count[(array[idx] / n) % 10]++;
-	for (idx = 1; idx < 10; idx++)
+	idx = 1;
+	for (; idx < 10; idx++)
 		count[idx] += count[idx - 1];
 	idx = size - 1;
 	while (1)
 	{
-		output[count[(array[idx] / n) % 10] - 1] = array[idx];
+		product[count[(array[idx] / n) % 10] - 1] = array[idx];
 		count[(array[idx] / n) % 10]--;
 		if (idx == 0)
 			break;
@@ -51,23 +51,23 @@ void count_sort(int *array, size_t size, int n)
 	}
 	idx = 0;
 	for (; idx < size; idx++)
-		array[idx] = output[idx];
-	free(output);
+		array[idx] = product[idx];
+	free(product);
 }
 
 /**
  * radix_sort - radix sort
  * @array: array to sort
  * @size: size of array to sort
- * Return: void
+ * Return: null
  */
 
 void radix_sort(int *array, size_t size)
 {
 	size_t mx, n;
 
-	if (!array)
-		return;
+//	if (!array)
+//		return;dddd
 	mx = max_int(array, size);
 	n = 1;
 	for (; mx / n > 0; n *= 10)
