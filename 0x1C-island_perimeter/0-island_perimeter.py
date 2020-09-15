@@ -2,6 +2,7 @@
 """island perimiter method
 """
 
+
 def island_perimeter(grid):
     """Determine perimeter of shape based on grid
     """
@@ -17,4 +18,3 @@ def island_perimeter(grid):
                 if xdi != 0 and grid[idx][xdi-1] == 1:
                     sum -= 2
     return sum
-        
