@@ -1,7 +1,10 @@
 #!/usr/bin/python3
-
+"""island perimiter method
+"""
 
 def island_perimeter(grid):
+    """Determine perimeter of shape based on grid
+    """
     if not grid:
         return (0)
     sum = 0
