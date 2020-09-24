@@ -17,11 +17,11 @@ int binary_tree_is_avl(const binary_tree_t *tree)
 }
 
 /**
- * best_check - checks for bestness
- * @root: root node of tree
+ * best_check - checks for bestness of binary tree
+ * @root: root node of avl tree
  * @min: minimum value constraint
  * @max: maximum value constraint
- * Return: 1 if bst, 0 otherwise
+ * Return: 1 if best, 0 otherwise
  */
 
 int best_check(const binary_tree_t *root, int min, int max)
