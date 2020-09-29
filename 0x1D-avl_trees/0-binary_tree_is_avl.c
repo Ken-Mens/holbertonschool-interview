@@ -36,7 +36,7 @@ int best_check(const binary_tree_t *root, int min, int max)
 
 /**
  * height_check - check tree height
- * @root: root node of  avl tree
+ * @tree: root node of  avl tree
  * Return: height of  avl tree
  */
 
