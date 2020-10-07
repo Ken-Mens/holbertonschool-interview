@@ -9,7 +9,7 @@ def pascal_triangle(n):
                 if (foo == 0):
                     a[idx].append(1)
                 else:
-                    a[idx].append(a[idx - 1][foo] + a [idx -1][foo - 1])
+                    a[idx].append(a[idx - 1][foo] + a [idx - 1][foo - 1])
             elif (foo == idx): 
                 a[idx].append(1)
     return a
