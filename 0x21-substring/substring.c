@@ -20,14 +20,14 @@ int *find_substring(char const *s, char const **words, int nb_words, int *n)
 	dict_len = regwordlen * nb_words;
 	temp_o = calloc((dict_len + 1), sizeof(char));
 	pos_m = calloc((slen + 1), sizeof(char));
-    l = 0;
+	l = 0;
 	for (; l <= (slen - dict_len);)
 	{
 		strncpy(temp_o, &s[l], dict_len);
-        m = 0;
+	m = 0;
 		for (; m < nb_words; m++)
 		{
-            k = 0;
+	k = 0;
 			for (; k < dict_len;)
 			{
 				foo = strstr(temp_o + k, words[m]);
