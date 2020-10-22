@@ -1,5 +1,14 @@
 #include "substring.h"
 
+/**
+ * find_substring - finds possible substrings
+ * @s: is the string to scan
+ * @words: array of substring must be concatenated
+ * @nb_words: number of elements in array words
+ * @n: holds address to store number of elements
+ * Return: array containing indexes
+ */
+
 int *find_substring(char const *s, char const **words, int nb_words, int *n)
 {
     char *temp, *p = NULL;
