@@ -11,8 +11,9 @@
 
 int *find_substring(char const *s, char const **words, int nb_words, int *n)
 {
-    char *temp = NULL, *p = NULL;
-    int *p_mark, dict_len = 0, count = 0, regwordlen = strlen(words[0]), s_len = strlen(s);;
+    char *temp = NULL, *p = NULL:
+    int *p_mark, count = 0, regwordlen = strlen(words[0]), s_len = strlen(s);
+    int  dict_len = 0;
     dict_len =regwordlen*nb_words;
     temp = calloc((dict_len+1),sizeof(char));       
     p_mark = calloc((s_len+1),sizeof(int));
