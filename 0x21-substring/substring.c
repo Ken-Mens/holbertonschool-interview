@@ -3,19 +3,16 @@
 
 int *find_substring(char const *s, char const **words, int nb_words, int *n)
 {
-    char *temp;
-    int s_len = strlen(s);
-    int *p_mark, dictlen = 0, count = 0, regwordlen = strlen(words[0]);
-    char *p=NULL;
-    dictlen=regwordlen*nb_words;
-    temp = calloc((dictlen+1),sizeof(char));
-        
+    char *temp, *p = NULL;
+    int *p_mark, dict_len = 0, count = 0, regwordlen = strlen(words[0]), s_len = strlen(s);;
+    dict_len =regwordlen*nb_words;
+    temp = calloc((dict_len+1),sizeof(char));       
     p_mark = calloc((s_len+1),sizeof(int));
-    for(int i = 0; i<= (s_len-dictlen);){
-        strncpy(temp, &s[i],dictlen);
-        for(int j = 0; j< nb_words; j++){
-
-            for(int k = 0; k<dictlen ;)
+    for(int i = 0; i <= (s_len-dict_len);){
+        strncpy(temp, &s[i],dict_len);
+        for(int j = 0; j< nb_words; j++)
+        {
+            for(int k = 0; k<dict_len ;)
             {
                 p = strstr(temp+k, words[j]);
                 if(p!= NULL && ((p-temp) % regwordlen)==0)
@@ -24,18 +21,17 @@ int *find_substring(char const *s, char const **words, int nb_words, int *n)
                     k = p-temp ++;
                     p = NULL;
                 }else if(NULL == p)
-                    goto nextseg;       
-            }
-            
-            if(NULL!=p )
+                    goto foo;       
+            }          
+            if(NULL != p )
                 memset(p, '.', regwordlen);
             else
-                goto nextseg;           
+                goto foo;           
         }
                 
-        if(s_len!=0 && dictlen!=0)
+        if(s_len!=0 && dict_len!=0)
             p_mark[count++]=i;
-nextseg:
+foo:
         i++;
     }  
     *n = count;
