@@ -1,6 +1,8 @@
 #ifndef _SUBSTRING_H_
 #define _SUBSTRING_H_
+
 #include <stdlib.h>
+#include <stdio.h>
 #include <string.h>
 
 
