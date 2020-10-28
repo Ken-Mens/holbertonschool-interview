@@ -12,12 +12,12 @@
 int *find_substring(char const *s, char const **words, int nb_words, int *n)
 {
 	char *temp_o, *foo;
-	int slen, dict_len = 0, count = 0, regwordlen, l, m, k;
+	int slen, dict_len = 0, count = 0, reg_len, l, m, k;
 	int *pos_m = NULL;
 
 	slen = strlen(s);
-	regwordlen = strlen(words[0]);
-	dict_len = regwordlen * nb_words;
+	reg_len = strlen(words[0]);
+	dict_len = reg_len * nb_words;
 	temp_o = calloc((dict_len + 1), sizeof(char));
 	pos_m = calloc((slen + 1), sizeof(char));
     l = 0;
@@ -31,7 +31,7 @@ int *find_substring(char const *s, char const **words, int nb_words, int *n)
 			for (; k < dict_len;)
 			{
 				foo = strstr(temp_o + k, words[m]);
-				if (foo != NULL && ((foo - temp_o) % regwordlen) == 0)
+				if (foo != NULL && ((foo - temp_o) % reg_len) == 0)
 					break;
 				else if (foo != NULL)
 				{
@@ -42,7 +42,7 @@ int *find_substring(char const *s, char const **words, int nb_words, int *n)
 					goto last;
 			}
 			if (foo != NULL)
-				memset(foo, '.', regwordlen);
+				memset(foo, '.', reg_len);
 			else
 				goto last;
 		}
@@ -51,6 +51,7 @@ int *find_substring(char const *s, char const **words, int nb_words, int *n)
 last:
 		l++;
 	}
+	free (temp_o);
 	*n = count;
 	return (pos_m);
 }
