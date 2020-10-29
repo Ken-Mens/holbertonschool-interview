@@ -10,7 +10,8 @@ def isWinner(x, nums):
     ben = 0
     numl_en = len(nums)
     for i in range(x):
-        ren = i if i < numl_en - 1 else numl_en - 1
+        nl = numl_en - 1
+        ren = i if i < nl else nl
         if isSet(nums[ren]) == 1:
             maria = maria + 1
         else:
@@ -29,8 +30,8 @@ def isSet(n):
     primes = 0
     for i in range(n + 1):
         if isPrime(i):
-            primes += 1
-    return primes % 2
+            primes = primes + 1
+    return (primes % 2)
 
 
 def isPrime(num):
@@ -38,9 +39,9 @@ def isPrime(num):
     """
     if num < 1:
         return None
-    if num == 1:
+    elif num == 1:
         return False
-    if num == 2:
+    elif num == 2:
         return True
     for i in range(2, num + 1):
         if (num % i) == 0:
